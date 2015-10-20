@@ -22,3 +22,5 @@ iron:router
 twbs:bootstrap
 fortawesome:fontawesome
 momentjs:moment
+accounts-password
+themeteorchef:bert

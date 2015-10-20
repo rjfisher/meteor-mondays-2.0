@@ -1,45 +1,66 @@
 <template name="navigation">
   <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-rocket"></i>  <span class="light">meteor</span> Mondays
-                </a>
-            </div>
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#meeting">Meeting</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#next">Next Meeting</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#code">Code</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#map">Map</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+        {{#if isHome}}
+        <a class="navbar-brand page-scroll" href="#page-top">
+          <i class="fa fa-rocket"></i>
+          <span class="light">Meteor</span> Mondays
+        </a>
+        {{else}}
+        <a class="navbar-brand page-scroll" href="{{pathFor 'home'}}">
+          <i class="fa fa-rocket"></i>
+          <span class="light">Meteor</span> Mondays
+        </a>
+        {{/if}}
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden">
+            <a class="green" href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#about">About</a>
+          </li>
+          <li>
+            <a class="green" href="{{pathFor 'news'}}">News</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#meeting">Meeting</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#next">Next Meeting</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#code">Code</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#contact">Contact</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#map">Map</a>
+          </li>
+          {{#if currentUser}}
+          <li>
+            <a href="{{pathFor 'logout'}}">{{username}}</a>
+          </li>
+          {{else}}
+          <li>
+            <a href="{{pathFor 'login'}}">Login</a>
+          </li>
+          {{/if}}
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
 </template>

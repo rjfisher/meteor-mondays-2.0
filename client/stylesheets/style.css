@@ -408,3 +408,26 @@ ul.countdown li p {
     color: #a7abb1;
     font-size: 14px;
 }
+
+#clearfix {
+  min-height: 10px;
+    margin: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  border-color: white;
+  background-color: black;
+  margin: 5px;
+  color: white;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #42dca3;
+  color: #42dca3;
+}
+
+.navbar-custom .green {
+  color: #42dca3;
+}
