@@ -1,4 +1,4 @@
-<template name="layout">  
+<template name="layout">
   <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -8,15 +8,7 @@
 
     {{> header}}
 
-    {{> about}}
-
-    {{> meetup}}
-
-    {{> nextMeeting}}
-
-    {{> code}}
-
-    {{> contact}}
+    {{> yield}}
 
     {{> footer}}
   </body>
