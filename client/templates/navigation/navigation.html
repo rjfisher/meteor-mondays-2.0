@@ -49,6 +49,11 @@
             <a class="page-scroll" href="#map">Map</a>
           </li>
           {{#if currentUser}}
+          {{#if isInRole 'admin' 'meteor-mondays'}}
+            <li>
+              <a class="green" href="{{pathFor 'admin'}}">Admin</a>
+            </li>
+          {{/if}}
           <li>
             <a href="{{pathFor 'logout'}}">{{username}}</a>
           </li>

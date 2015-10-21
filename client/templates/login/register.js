@@ -5,7 +5,7 @@ Template.register.events({
     var user = $(e.target).find('[name=username]').val();
     var pass = $(e.target).find('[name=password]').val();
 
-    return Accounts.createUser({
+    Accounts.createUser({
       username: user,
       email: user,
       password: pass
@@ -18,5 +18,9 @@ Template.register.events({
       Bert.alert('Welcome to Meteor-Mondays!', 'success', 'fixed-top');
       Router.go('home');
     });
+
+    // Add new user to the 'users' group.
+    Roles.addUsersToRoles(Meteor.user()._id, ['user'], 'meteor-mondays.com');
+    return;
   }
 });

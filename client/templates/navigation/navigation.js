@@ -4,6 +4,6 @@ Template.navigation.helpers({
   },
 
   username: function() {
-    return Meteor.user() ? Meteor.user().username : '';
+    return Meteor.user() ? Meteor.user().profile.name : '';
   }
 });
