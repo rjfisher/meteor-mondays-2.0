@@ -10,4 +10,8 @@ if (News.find().count() === 0) {
 
   // add user to admin group
   Roles.addUsersToRoles(id, ['user', 'admin'], 'meteor-mondays');
+
+  News.insert({
+    name: 'Needed for fixtures'
+  });
 }
